@@ -65,13 +65,13 @@ Running Broker
 ```
 
 Well done you have now deployed your first artemiscloud image. Now we want to expose the broker to the outside world so
-stop the broker and remove the image.
+stop the broker and remove the container.
 
 ```shell script
 docker rm artemis
 ```
 
-Now re run the broker pod and expose the broker by publishing the broker's console port 8161 on the docker hosts machine port 80.
+Now we run the broker pod and expose the broker by publishing the broker's console port 8161 on the docker hosts machine port 80.
 
 ```shell script
 docker run -e AMQ_USER=admin -e AMQ_PASSWORD=admin -p80:8161 --name artemis quay.io/artemiscloud/activemq-artemis-broker:dev.latest
